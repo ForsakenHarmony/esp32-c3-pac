@@ -10,13 +10,13 @@ impl crate::ResetValue for super::RTC_CNTL {
         0
     }
 }
-#[doc = "Reader of field `RTC_CNTL_REGULATOR_FORCE_PU`"]
-pub type RTC_CNTL_REGULATOR_FORCE_PU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTC_CNTL_REGULATOR_FORCE_PU`"]
-pub struct RTC_CNTL_REGULATOR_FORCE_PU_W<'a> {
+#[doc = "Reader of field `REGULATOR_FORCE_PU`"]
+pub type REGULATOR_FORCE_PU_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REGULATOR_FORCE_PU`"]
+pub struct REGULATOR_FORCE_PU_W<'a> {
     w: &'a mut W,
 }
-impl<'a> RTC_CNTL_REGULATOR_FORCE_PU_W<'a> {
+impl<'a> REGULATOR_FORCE_PU_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -34,13 +34,13 @@ impl<'a> RTC_CNTL_REGULATOR_FORCE_PU_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `RTC_CNTL_REGULATOR_FORCE_PD`"]
-pub type RTC_CNTL_REGULATOR_FORCE_PD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTC_CNTL_REGULATOR_FORCE_PD`"]
-pub struct RTC_CNTL_REGULATOR_FORCE_PD_W<'a> {
+#[doc = "Reader of field `REGULATOR_FORCE_PD`"]
+pub type REGULATOR_FORCE_PD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REGULATOR_FORCE_PD`"]
+pub struct REGULATOR_FORCE_PD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> RTC_CNTL_REGULATOR_FORCE_PD_W<'a> {
+impl<'a> REGULATOR_FORCE_PD_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -58,13 +58,13 @@ impl<'a> RTC_CNTL_REGULATOR_FORCE_PD_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `RTC_CNTL_DBOOST_FORCE_PU`"]
-pub type RTC_CNTL_DBOOST_FORCE_PU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTC_CNTL_DBOOST_FORCE_PU`"]
-pub struct RTC_CNTL_DBOOST_FORCE_PU_W<'a> {
+#[doc = "Reader of field `DBOOST_FORCE_PU`"]
+pub type DBOOST_FORCE_PU_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DBOOST_FORCE_PU`"]
+pub struct DBOOST_FORCE_PU_W<'a> {
     w: &'a mut W,
 }
-impl<'a> RTC_CNTL_DBOOST_FORCE_PU_W<'a> {
+impl<'a> DBOOST_FORCE_PU_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -82,13 +82,13 @@ impl<'a> RTC_CNTL_DBOOST_FORCE_PU_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `RTC_CNTL_DBOOST_FORCE_PD`"]
-pub type RTC_CNTL_DBOOST_FORCE_PD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTC_CNTL_DBOOST_FORCE_PD`"]
-pub struct RTC_CNTL_DBOOST_FORCE_PD_W<'a> {
+#[doc = "Reader of field `DBOOST_FORCE_PD`"]
+pub type DBOOST_FORCE_PD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DBOOST_FORCE_PD`"]
+pub struct DBOOST_FORCE_PD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> RTC_CNTL_DBOOST_FORCE_PD_W<'a> {
+impl<'a> DBOOST_FORCE_PD_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -109,44 +109,44 @@ impl<'a> RTC_CNTL_DBOOST_FORCE_PD_W<'a> {
 impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn rtc_cntl_regulator_force_pu(&self) -> RTC_CNTL_REGULATOR_FORCE_PU_R {
-        RTC_CNTL_REGULATOR_FORCE_PU_R::new(((self.bits >> 31) & 0x01) != 0)
+    pub fn regulator_force_pu(&self) -> REGULATOR_FORCE_PU_R {
+        REGULATOR_FORCE_PU_R::new(((self.bits >> 31) & 0x01) != 0)
     }
     #[doc = "Bit 30"]
     #[inline(always)]
-    pub fn rtc_cntl_regulator_force_pd(&self) -> RTC_CNTL_REGULATOR_FORCE_PD_R {
-        RTC_CNTL_REGULATOR_FORCE_PD_R::new(((self.bits >> 30) & 0x01) != 0)
+    pub fn regulator_force_pd(&self) -> REGULATOR_FORCE_PD_R {
+        REGULATOR_FORCE_PD_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 29"]
     #[inline(always)]
-    pub fn rtc_cntl_dboost_force_pu(&self) -> RTC_CNTL_DBOOST_FORCE_PU_R {
-        RTC_CNTL_DBOOST_FORCE_PU_R::new(((self.bits >> 29) & 0x01) != 0)
+    pub fn dboost_force_pu(&self) -> DBOOST_FORCE_PU_R {
+        DBOOST_FORCE_PU_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
-    pub fn rtc_cntl_dboost_force_pd(&self) -> RTC_CNTL_DBOOST_FORCE_PD_R {
-        RTC_CNTL_DBOOST_FORCE_PD_R::new(((self.bits >> 28) & 0x01) != 0)
+    pub fn dboost_force_pd(&self) -> DBOOST_FORCE_PD_R {
+        DBOOST_FORCE_PD_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn rtc_cntl_regulator_force_pu(&mut self) -> RTC_CNTL_REGULATOR_FORCE_PU_W {
-        RTC_CNTL_REGULATOR_FORCE_PU_W { w: self }
+    pub fn regulator_force_pu(&mut self) -> REGULATOR_FORCE_PU_W {
+        REGULATOR_FORCE_PU_W { w: self }
     }
     #[doc = "Bit 30"]
     #[inline(always)]
-    pub fn rtc_cntl_regulator_force_pd(&mut self) -> RTC_CNTL_REGULATOR_FORCE_PD_W {
-        RTC_CNTL_REGULATOR_FORCE_PD_W { w: self }
+    pub fn regulator_force_pd(&mut self) -> REGULATOR_FORCE_PD_W {
+        REGULATOR_FORCE_PD_W { w: self }
     }
     #[doc = "Bit 29"]
     #[inline(always)]
-    pub fn rtc_cntl_dboost_force_pu(&mut self) -> RTC_CNTL_DBOOST_FORCE_PU_W {
-        RTC_CNTL_DBOOST_FORCE_PU_W { w: self }
+    pub fn dboost_force_pu(&mut self) -> DBOOST_FORCE_PU_W {
+        DBOOST_FORCE_PU_W { w: self }
     }
     #[doc = "Bit 28"]
     #[inline(always)]
-    pub fn rtc_cntl_dboost_force_pd(&mut self) -> RTC_CNTL_DBOOST_FORCE_PD_W {
-        RTC_CNTL_DBOOST_FORCE_PD_W { w: self }
+    pub fn dboost_force_pd(&mut self) -> DBOOST_FORCE_PD_W {
+        DBOOST_FORCE_PD_W { w: self }
     }
 }

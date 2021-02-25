@@ -30,6 +30,9 @@ use core::marker::PhantomData;
 use core::ops::Deref;
 #[doc = r"Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 3;
+#[doc(hidden)]
+pub mod interrupt;
+pub use self::interrupt::Interrupt;
 #[allow(unused_imports)]
 use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
@@ -223,6 +226,25 @@ impl Deref for I2C {
 }
 #[doc = "I2C"]
 pub mod i2c;
+#[doc = "I2C0"]
+pub struct I2C0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2C0 {}
+impl I2C0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2c::RegisterBlock {
+        0x6001_3000 as *const _
+    }
+}
+impl Deref for I2C0 {
+    type Target = i2c::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*I2C0::ptr() }
+    }
+}
 #[doc = "I2S"]
 pub struct I2S {
     _marker: PhantomData<*const ()>,
@@ -265,6 +287,27 @@ impl Deref for INTERRUPT_CORE0 {
 }
 #[doc = "INTERRUPT_CORE0"]
 pub mod interrupt_core0;
+#[doc = "IO_MUX"]
+pub struct IO_MUX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for IO_MUX {}
+impl IO_MUX {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const io_mux::RegisterBlock {
+        0x6000_9000 as *const _
+    }
+}
+impl Deref for IO_MUX {
+    type Target = io_mux::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*IO_MUX::ptr() }
+    }
+}
+#[doc = "IO_MUX"]
+pub mod io_mux;
 #[doc = "LEDC"]
 pub struct LEDC {
     _marker: PhantomData<*const ()>,
@@ -391,6 +434,63 @@ impl Deref for SPI {
 }
 #[doc = "SPI"]
 pub mod spi;
+#[doc = "SPI0"]
+pub struct SPI0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI0 {}
+impl SPI0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi::RegisterBlock {
+        0x6000_3000 as *const _
+    }
+}
+impl Deref for SPI0 {
+    type Target = spi::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SPI0::ptr() }
+    }
+}
+#[doc = "SPI1"]
+pub struct SPI1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI1 {}
+impl SPI1 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi::RegisterBlock {
+        0x6000_2000 as *const _
+    }
+}
+impl Deref for SPI1 {
+    type Target = spi::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SPI1::ptr() }
+    }
+}
+#[doc = "SPI2"]
+pub struct SPI2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI2 {}
+impl SPI2 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi::RegisterBlock {
+        0x6002_4000 as *const _
+    }
+}
+impl Deref for SPI2 {
+    type Target = spi::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SPI2::ptr() }
+    }
+}
 #[doc = "SPI_MEM"]
 pub struct SPI_MEM {
     _marker: PhantomData<*const ()>,
@@ -475,6 +575,44 @@ impl Deref for SYS_TIMER {
 }
 #[doc = "SYS_TIMER"]
 pub mod sys_timer;
+#[doc = "TIMG0"]
+pub struct TIMG0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIMG0 {}
+impl TIMG0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const timg::RegisterBlock {
+        0x6001_f000 as *const _
+    }
+}
+impl Deref for TIMG0 {
+    type Target = timg::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*TIMG0::ptr() }
+    }
+}
+#[doc = "TIMG1"]
+pub struct TIMG1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIMG1 {}
+impl TIMG1 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const timg::RegisterBlock {
+        0x6002_0000 as *const _
+    }
+}
+impl Deref for TIMG1 {
+    type Target = timg::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*TIMG1::ptr() }
+    }
+}
 #[doc = "TIMG"]
 pub struct TIMG {
     _marker: PhantomData<*const ()>,
@@ -517,6 +655,25 @@ impl Deref for UART {
 }
 #[doc = "UART"]
 pub mod uart;
+#[doc = "UART1"]
+pub struct UART1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART1 {}
+impl UART1 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart::RegisterBlock {
+        0x6001_0000 as *const _
+    }
+}
+impl Deref for UART1 {
+    type Target = uart::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*UART1::ptr() }
+    }
+}
 #[doc = "UHCI"]
 pub struct UHCI {
     _marker: PhantomData<*const ()>,
@@ -538,6 +695,44 @@ impl Deref for UHCI {
 }
 #[doc = "UHCI"]
 pub mod uhci;
+#[doc = "UHCI0"]
+pub struct UHCI0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UHCI0 {}
+impl UHCI0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uhci::RegisterBlock {
+        0x6001_4000 as *const _
+    }
+}
+impl Deref for UHCI0 {
+    type Target = uhci::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*UHCI0::ptr() }
+    }
+}
+#[doc = "UART0"]
+pub struct UART0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART0 {}
+impl UART0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart::RegisterBlock {
+        0x6000_0000 as *const _
+    }
+}
+impl Deref for UART0 {
+    type Target = uart::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*UART0::ptr() }
+    }
+}
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -561,10 +756,14 @@ pub struct Peripherals {
     pub GPIO_SD: GPIO_SD,
     #[doc = "I2C"]
     pub I2C: I2C,
+    #[doc = "I2C0"]
+    pub I2C0: I2C0,
     #[doc = "I2S"]
     pub I2S: I2S,
     #[doc = "INTERRUPT_CORE0"]
     pub INTERRUPT_CORE0: INTERRUPT_CORE0,
+    #[doc = "IO_MUX"]
+    pub IO_MUX: IO_MUX,
     #[doc = "LEDC"]
     pub LEDC: LEDC,
     #[doc = "RMT"]
@@ -577,6 +776,12 @@ pub struct Peripherals {
     pub SENSITIVE: SENSITIVE,
     #[doc = "SPI"]
     pub SPI: SPI,
+    #[doc = "SPI0"]
+    pub SPI0: SPI0,
+    #[doc = "SPI1"]
+    pub SPI1: SPI1,
+    #[doc = "SPI2"]
+    pub SPI2: SPI2,
     #[doc = "SPI_MEM"]
     pub SPI_MEM: SPI_MEM,
     #[doc = "SYSCON"]
@@ -585,12 +790,22 @@ pub struct Peripherals {
     pub SYSTEM: SYSTEM,
     #[doc = "SYS_TIMER"]
     pub SYS_TIMER: SYS_TIMER,
+    #[doc = "TIMG0"]
+    pub TIMG0: TIMG0,
+    #[doc = "TIMG1"]
+    pub TIMG1: TIMG1,
     #[doc = "TIMG"]
     pub TIMG: TIMG,
     #[doc = "UART"]
     pub UART: UART,
+    #[doc = "UART1"]
+    pub UART1: UART1,
     #[doc = "UHCI"]
     pub UHCI: UHCI,
+    #[doc = "UHCI0"]
+    pub UHCI0: UHCI0,
+    #[doc = "UART0"]
+    pub UART0: UART0,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -636,10 +851,16 @@ impl Peripherals {
             I2C: I2C {
                 _marker: PhantomData,
             },
+            I2C0: I2C0 {
+                _marker: PhantomData,
+            },
             I2S: I2S {
                 _marker: PhantomData,
             },
             INTERRUPT_CORE0: INTERRUPT_CORE0 {
+                _marker: PhantomData,
+            },
+            IO_MUX: IO_MUX {
                 _marker: PhantomData,
             },
             LEDC: LEDC {
@@ -660,6 +881,15 @@ impl Peripherals {
             SPI: SPI {
                 _marker: PhantomData,
             },
+            SPI0: SPI0 {
+                _marker: PhantomData,
+            },
+            SPI1: SPI1 {
+                _marker: PhantomData,
+            },
+            SPI2: SPI2 {
+                _marker: PhantomData,
+            },
             SPI_MEM: SPI_MEM {
                 _marker: PhantomData,
             },
@@ -672,13 +902,28 @@ impl Peripherals {
             SYS_TIMER: SYS_TIMER {
                 _marker: PhantomData,
             },
+            TIMG0: TIMG0 {
+                _marker: PhantomData,
+            },
+            TIMG1: TIMG1 {
+                _marker: PhantomData,
+            },
             TIMG: TIMG {
                 _marker: PhantomData,
             },
             UART: UART {
                 _marker: PhantomData,
             },
+            UART1: UART1 {
+                _marker: PhantomData,
+            },
             UHCI: UHCI {
+                _marker: PhantomData,
+            },
+            UHCI0: UHCI0 {
+                _marker: PhantomData,
+            },
+            UART0: UART0 {
                 _marker: PhantomData,
             },
         }
